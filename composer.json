@@ -28,7 +28,8 @@
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^3.0"
+        "symfony/phpunit-bridge": "^3.0",
+        "friendsofphp/php-cs-fixer" :  "2.*"
     },
     "scripts": {
         "symfony-scripts": [
@@ -43,14 +44,16 @@
             "@symfony-scripts"
         ],
         "post-update-cmd": [
-            "@symfony-scripts"
+            "@symfony-scripts",
+            "AppBundle\\Tools\\InstallCsFixer::postUpdate"
         ]
     },
     "config": {
         "platform": {
             "php": "5.6"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "vendor-dir" : "vendor"
     },
     "extra": {
         "symfony-app-dir": "app",
