@@ -39,6 +39,8 @@ class FormField
      * @var array
      */
     protected $options; // plusz default options
+    
+    // olvasható ID (név)
 
     /**
      * @return mixed
