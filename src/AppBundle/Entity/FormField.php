@@ -38,7 +38,7 @@ class FormField
      *
      * @var array
      */
-    protected $options;
+    protected $options; // plusz default options
 
     /**
      * @return mixed
