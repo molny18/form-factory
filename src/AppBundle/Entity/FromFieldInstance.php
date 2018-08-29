@@ -37,4 +37,6 @@ class FromFieldInstance
      * @var array
      */
     protected $instance_options;
+    
+    //FORM_ID -t is tároljuk (? lehet h a position-t is itt kéne !! )
 }
