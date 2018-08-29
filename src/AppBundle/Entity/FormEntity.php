@@ -31,7 +31,7 @@ class FormEntity
      * @Assert\NotBlank()
      * @var string
      */
-    protected $name;
+    protected $name; // UNIQUE
 
     /**
      * @ORM\Column(type="json_array",nullable=false)
