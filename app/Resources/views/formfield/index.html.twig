@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Formfields list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Options</th>
+                <th>Default_options</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formField in formFields %}
+            <tr>
+                <td><a href="{{ path('formfield_show', { 'id': formField.id }) }}">{{ formField.id }}</a></td>
+                <td>{{ formField.type }}</td>
+                <td>{{ formField.options }}</td>
+                <td>{{ formField.defaultoptions }}</td>
+                <td>{{ formField.name }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('formfield_show', { 'id': formField.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('formfield_edit', { 'id': formField.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('formfield_new') }}">Create a new formField</a>
+        </li>
+    </ul>
+{% endblock %}

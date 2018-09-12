@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Formentities list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Fields</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formEntity in formEntities %}
+            <tr>
+                <td><a href="{{ path('base_form_show', { 'id': formEntity.id }) }}">{{ formEntity.id }}</a></td>
+                <td>{{ formEntity.name }}</td>
+                {#<td>{{ formEntity.fields }}</td>#}
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('base_form_show', { 'id': formEntity.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('base_form_edit', { 'id': formEntity.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('base_form_new') }}">Create a new formEntity</a>
+        </li>
+    </ul>
+
+    <div>
+        <strong>
+            {{ showForm('proba') }}
+        </strong>
+    </div>
+{% endblock %}

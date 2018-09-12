@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Formfield</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ formField.id }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ formField.type }}</td>
+            </tr>
+            <tr>
+                <th>Options</th>
+                <td>{{ formField.options }}</td>
+            </tr>
+            <tr>
+                <th>Default_options</th>
+                <td>{{ formField.defaultoptions }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ formField.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('formfield_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('formfield_edit', { 'id': formField.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

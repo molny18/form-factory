@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Formfieldinstances list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Field_id</th>
+                <th>Instance_options</th>
+                <th>Form_id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formFieldInstance in formFieldInstances %}
+            <tr>
+                <td><a href="{{ path('formfieldinstance_show', { 'id': formFieldInstance.id }) }}">{{ formFieldInstance.id }}</a></td>
+                <td>{{ formFieldInstance.fieldid }}</td>
+                <td>{{ formFieldInstance.instanceoptions }}</td>
+                <td>{{ formFieldInstance.formid }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('formfieldinstance_show', { 'id': formFieldInstance.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('formfieldinstance_edit', { 'id': formFieldInstance.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('formfieldinstance_new') }}">Create a new formFieldInstance</a>
+        </li>
+    </ul>
+{% endblock %}

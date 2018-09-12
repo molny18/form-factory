@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Formfieldinstance</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ formFieldInstance.id }}</td>
+            </tr>
+            <tr>
+                <th>Field_id</th>
+                <td>{{ formFieldInstance.fieldid }}</td>
+            </tr>
+            <tr>
+                <th>Instance_options</th>
+                <td>{{ formFieldInstance.instanceoptions }}</td>
+            </tr>
+            <tr>
+                <th>Form_id</th>
+                <td>{{ formFieldInstance.formid }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('formfieldinstance_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('formfieldinstance_edit', { 'id': formFieldInstance.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
