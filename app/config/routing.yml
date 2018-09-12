@@ -1,3 +1,16 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+app_base_form:
+    resource: "@AppBundle/Resources/config/routing/formentity.yml"
+    prefix:   /base_form
+
+app_formfield:
+    resource: "@AppBundle/Resources/config/routing/formfield.yml"
+    prefix:   /formfield
+
+app_formfieldinstance:
+    resource: "@AppBundle/Resources/config/routing/formfieldinstance.yml"
+    prefix:   /formfieldinstance
+

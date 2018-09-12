@@ -1,0 +1,24 @@
+base_form_index:
+    path:     /
+    defaults: { _controller: "AppBundle:FormEntity:index" }
+    methods:  GET
+
+base_form_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:FormEntity:show" }
+    methods:  GET
+
+base_form_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:FormEntity:new" }
+    methods:  [GET, POST]
+
+base_form_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:FormEntity:edit" }
+    methods:  [GET, POST]
+
+base_form_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:FormEntity:delete" }
+    methods:  DELETE

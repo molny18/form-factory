@@ -1,0 +1,24 @@
+formfieldinstance_index:
+    path:     /
+    defaults: { _controller: "AppBundle:FormFieldInstance:index" }
+    methods:  GET
+
+formfieldinstance_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:FormFieldInstance:show" }
+    methods:  GET
+
+formfieldinstance_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:FormFieldInstance:new" }
+    methods:  [GET, POST]
+
+formfieldinstance_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:FormFieldInstance:edit" }
+    methods:  [GET, POST]
+
+formfieldinstance_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:FormFieldInstance:delete" }
+    methods:  DELETE

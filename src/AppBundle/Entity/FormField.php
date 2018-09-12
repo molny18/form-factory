@@ -8,8 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Class FormField
- * @package AppBundle\Entity
+ * Class FormField.
  *
  * @ORM\Entity
  * @ORM\Table(name="form_field");
@@ -17,7 +16,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class FormField
 {
-
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -38,9 +36,22 @@ class FormField
      *
      * @var array
      */
-    protected $options; // plusz default options
-    
-    // olvasható ID (név)
+    protected $options;
+
+    /**
+     * @ORM\Column(type="json_array", nullable=false)
+     *
+     * @var array
+     */
+    protected $default_options;
+
+    /**
+     * @ORM\Column(type="string",nullable=false,unique=true)
+     * @Assert\NotBlank()
+     *
+     * @var string
+     */
+    protected $name;
 
     /**
      * @return mixed
@@ -49,7 +60,6 @@ class FormField
     {
         return $this->id;
     }
-
 
     /**
      * @return string
@@ -83,6 +93,35 @@ class FormField
         $this->options = $options;
     }
 
+    /**
+     * @return array
+     */
+    public function getDefaultOptions(): array
+    {
+        return $this->default_options;
+    }
 
+    /**
+     * @param array $default_options
+     */
+    public function setDefaultOptions(array $default_options)
+    {
+        $this->default_options = $default_options;
+    }
 
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name)
+    {
+        $this->name = $name;
+    }
 }

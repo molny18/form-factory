@@ -7,10 +7,8 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
-
 /**
- * Class Form
- * @package AppBundle\Entity
+ * Class Form.
  *
  * @ORM\Entity
  * @ORM\Table(name="form");
@@ -18,7 +16,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class FormEntity
 {
-
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -27,11 +24,12 @@ class FormEntity
     protected $id;
 
     /**
-     * @ORM\Column(type="string",length=255,nullable=false)
+     * @ORM\Column(type="string",nullable=false, unique=true)
      * @Assert\NotBlank()
+     *
      * @var string
      */
-    protected $name; // UNIQUE
+    protected $name;
 
     /**
      * @ORM\Column(type="json_array",nullable=false)
@@ -79,5 +77,4 @@ class FormEntity
     {
         return $this->id;
     }
-
 }
