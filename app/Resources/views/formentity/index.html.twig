@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <a href="{{ path('homepage') }}">INDEX</a>
     <h1>Formentities list</h1>
 
     <table>
@@ -40,8 +41,6 @@
     </ul>
 
     <div>
-        <strong>
-            {{ showForm('proba') }}
-        </strong>
+
     </div>
 {% endblock %}

@@ -63,7 +63,7 @@ class FormFieldInstance
     /**
      * @return int
      */
-    public function getFieldId(): int
+    public function getFieldId(): ?int
     {
         return $this->field_id;
     }
@@ -79,7 +79,7 @@ class FormFieldInstance
     /**
      * @return array
      */
-    public function getInstanceOptions(): array
+    public function getInstanceOptions(): ?array
     {
         return $this->instance_options;
     }
@@ -95,7 +95,7 @@ class FormFieldInstance
     /**
      * @return int
      */
-    public function getFormId(): int
+    public function getFormId(): ?int
     {
         return $this->form_id;
     }

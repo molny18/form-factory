@@ -18,7 +18,7 @@
             <tr>
                 <td><a href="{{ path('formfieldinstance_show', { 'id': formFieldInstance.id }) }}">{{ formFieldInstance.id }}</a></td>
                 <td>{{ formFieldInstance.fieldid }}</td>
-                <td>{{ formFieldInstance.instanceoptions }}</td>
+                <td>{{ formFieldInstance.instanceoptions|json_encode() }}</td>
                 <td>{{ formFieldInstance.formid }}</td>
                 <td>
                     <ul>

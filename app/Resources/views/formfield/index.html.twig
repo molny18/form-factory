@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <a href="{{ path('homepage') }}">INDEX</a>
     <h1>Formfields list</h1>
 
     <table>
@@ -19,8 +20,8 @@
             <tr>
                 <td><a href="{{ path('formfield_show', { 'id': formField.id }) }}">{{ formField.id }}</a></td>
                 <td>{{ formField.type }}</td>
-                <td>{{ formField.options }}</td>
-                <td>{{ formField.defaultoptions }}</td>
+                <td>{{ formField.options|json_encode() }}</td>
+                <td>{{ formField.defaultoptions|json_encode()}}</td>
                 <td>{{ formField.name }}</td>
                 <td>
                     <ul>

@@ -64,7 +64,7 @@ class FormField
     /**
      * @return string
      */
-    public function getType(): string
+    public function getType(): ?string
     {
         return $this->type;
     }
@@ -80,7 +80,7 @@ class FormField
     /**
      * @return array
      */
-    public function getOptions(): array
+    public function getOptions(): ?array
     {
         return $this->options;
     }
@@ -96,7 +96,7 @@ class FormField
     /**
      * @return array
      */
-    public function getDefaultOptions(): array
+    public function getDefaultOptions(): ?array
     {
         return $this->default_options;
     }
@@ -112,7 +112,7 @@ class FormField
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
